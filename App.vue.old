@@ -1,0 +1,41 @@
+<template>
+  <header-bar-vue />
+  <button @click="returnHome">back</button>
+
+  {{ zoom }}
+  {{ centerCoor }}
+  {{ centerCoor.toString() != defaultCoor.toString() }}
+  <div class="map">
+    <l-map v-model:zoom="zoom" v-model:center="centerCoor" :zoom-animation="true">
+      <l-tile-layer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+    </l-map>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import HeaderBarVue from "./components/HeaderBar.vue";
+import { ref } from "vue";
+import { LMap, LControlZoom, LTileLayer, LControlLayers } from "@vue-leaflet/vue-leaflet";
+import L from "leaflet";
+
+const defaultZoom = 5;
+const defaultCoor = L.latLng(-0.967, 120.146);
+
+const zoom = ref(defaultZoom);
+const centerCoor = ref(defaultCoor);
+
+function returnHome() {
+  console.log("paggil");
+  zoom.value = defaultZoom;
+  centerCoor.value = defaultCoor;
+  if (centerCoor.value.toString() != defaultCoor.toString()) {
+    returnHome();
+  }
+}
+</script>
+
+<style lang="scss">
+.map {
+  height: 70vh;
+}
+</style>

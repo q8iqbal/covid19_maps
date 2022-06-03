@@ -1,0 +1,35 @@
+{
+  "name": "covid19_maps",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@oruga-ui/oruga-next": "^0.5.5",
+    "@oruga-ui/theme-bulma": "^0.2.6",
+    "@vue-leaflet/vue-leaflet": "^0.6.1",
+    "d3": "^7.4.4",
+    "leaflet": "^1.8.0",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.0",
+    "@types/leaflet": "^1.7.10",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "bulma": "^0.9.4",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.0.1",
+    "node-sass": "^7.0.1",
+    "prettier": "^2.6.2",
+    "sass": "^1.52.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9",
+    "vue-tsc": "^0.34.7"
+  }
+}
